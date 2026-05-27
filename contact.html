@@ -14,11 +14,22 @@
 
 <header>
   <nav class="navbar">
-    <a class="logo" href="index.html">
-      <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon">
-      <h1 class="logo">RAMS<span>.</span></h1>
+
+    <a class="logo" >
+      <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon"><h1 class="logo">
+
+RAMS<span>.</span>
+
+</h1>
     </a>
-    <ul class="nav-links">
+
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
@@ -26,6 +37,7 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="Ramil_Nocalan_CV.pdf" download>CV</a></li>
     </ul>
+
   </nav>
 </header>
 
@@ -58,5 +70,23 @@
   </div>
 </footer>
 
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 </body>
 </html>

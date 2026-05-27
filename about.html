@@ -12,25 +12,33 @@
 </head>
 <body>
 
+
 <header>
   <nav class="navbar">
-    <a class="logo">
-    <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon">
 
-    <h1 class="logo">RAMS<span>.</span></h1>
-</a>
-    <ul class="nav-links">
+    <a class="logo" >
+      <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon"><h1 class="logo">
+
+RAMS<span>.</span>
+
+</h1>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="booking.html">Booking</a></li>
       <li><a href="contact.html">Contact</a></li>
-       <li>
-    <a href="Ramil_Nocalan_CV.pdf" download>
-      CV
-    </a>
-  </li>
+      <li><a href="Ramil_Nocalan_CV.pdf" download>CV</a></li>
     </ul>
+
   </nav>
 </header>
 
@@ -66,6 +74,72 @@
   </div>
 
 </section>
+<!-- ABOUT EXTRA SECTION -->
+
+<!-- SECOND SECTION -->
+
+<section>
+
+  <div class="section-title">
+    <p>MY JOURNEY</p>
+    <h3>Achievements & Projects</h3>
+  </div>
+
+  <div class="creator-grid">
+
+    <!-- LEFT SIDE -->
+    <div class="creator-text">
+
+      <div class="achievement-list">
+
+        <div class="achievement-card">
+          <h5>🏆 Awards & Recognition</h5>
+          <p>
+            Champion in Mobile Photography during 11th Grade and awarded 4th Place Best Trailer in our College Film Festival as a 2nd Year BSIT student. These achievements reflect my passion for creativity, storytelling, and visual arts.
+          </p>
+        </div>
+
+        <div class="achievement-card">
+          <h5>🎬 Film & Video Projects</h5>
+          <p>
+            Created and participated in film trailers, short films, and school productions that focus on creative storytelling, editing, cinematography, and visual presentation for academic and festival projects.
+          </p>
+        </div>
+
+        <div class="achievement-card">
+          <h5>📸 Photography Journey</h5>
+          <p>
+            Started my photography journey through mobile photography and continued developing my skills in capturing events, portraits, and creative shots. Passionate about visual storytelling, editing, and exploring different styles of photography.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="creator-media">
+
+  <!-- PHOTOS (TOP ROW) -->
+  <img src="images/award.jpeg" alt="Rams Portrait" class="creator-image">
+  <img src="images/award2.jpeg" alt="Rams Award" class="creator-image">
+  
+
+  <!-- VIDEOS (BOTTOM ROW) -->
+  <video class="creator-video" controls>
+    <source src="images/Through_The_Lens_Teaser_Final.mp4" type="video/mp4">
+  </video>
+
+  <video class="creator-video" controls>
+    <source src="images/ramVid.mp4" type="video/mp4">
+  </video>
+
+</div>
+
+  </div>
+
+</section>
+
 <footer>
 
     <div class="footer-content">
@@ -79,6 +153,23 @@
     </div>
 
   </footer>
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
 
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 </body>
 </html>

@@ -7,50 +7,59 @@
   <title>Home | Rams Photography</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="icon" href="images/favicon.jpg">
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .reel-video {
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+  </style>
 </head>
 <body>
 
-
 <header>
-
   <nav class="navbar">
 
-    <a class="logo">
-      <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon">
+    <a class="logo" >
+      <img src="images/favicon.jpg" alt="Rams Photography Logo" class="logo-icon"><h1 class="logo">
 
-      <h1 class="logo">RAMS<span>.</span></h1>
+RAMS<span>.</span>
+
+</h1>
     </a>
 
-    <ul class="nav-links">
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="booking.html">Booking</a></li>
       <li><a href="contact.html">Contact</a></li>
-
-      <li>
-        <a href="Ramil_Nocalan_CV.pdf" download>
-          CV
-        </a>
-      </li>
+      <li><a href="Ramil_Nocalan_CV.pdf" download>CV</a></li>
     </ul>
 
   </nav>
-
 </header>
 
 <!-- HERO -->
 <section class="hero">
 
   <div class="hero-text">
-
-    <p class="tag">MANILA PHOTOGRAPHER</p>
+    <p class="tag">VALENZUELA PHOTOGRAPHER</p>
 
     <h2>
       Capturing <span>Stories</span><br>
@@ -62,14 +71,11 @@
       portraits, and unforgettable moments.
     </p>
 
-    <a href="gallery.html" class="btn">
-      View Gallery
-    </a>
-
+    <a href="gallery.html" class="btn">View Gallery</a>
   </div>
 
   <div class="hero-image">
-    <img src="images/kxkpLqXe.jpeg " alt="Rams Photography">
+    <img src="images/kxkpLqXe.jpeg" alt="Rams Photography">
   </div>
 
 </section>
@@ -83,31 +89,35 @@
   </div>
 
   <div class="gallery-grid">
-
-    <div class="card">
-      <img src="images/4.jpeg" alt="">
-    </div>
-
-    <div class="card">
-      <img src="images/5.jpeg" alt="">
-    </div>
-
-    <div class="card">
-      <img src="images/6.jpeg" alt="">
-    </div>
-
-    <div class="card">
-      <img src="images/7.jpeg" alt="">
-    </div>
-
+    <div class="card"><img src="images/4.jpeg" alt=""></div>
+    <div class="card"><img src="images/5.jpeg" alt=""></div>
+    <div class="card"><img src="images/6.jpeg" alt=""></div>
+    <div class="card"><img src="images/7.jpeg" alt=""></div>
   </div>
 
 </section>
+
+<!-- DEMO REEL -->
+<section>
+
+  <div class="section-title">
+    <p>BEHIND THE LENS</p>
+    <h3>Demo Reel</h3>
+  </div>
+
+  <video
+    class="reel-video"
+    src="images/Ram_DemoReel.mp4"
+    controls
+    preload="metadata"
+    poster="images/VPBszw7n.jpeg"
+  ></video>
+
+</section>
+
 <!-- FOOTER -->
 <footer>
-
   <div class="footer-content">
-
     <p>
       © 2026
       <a href="https://www.instagram.com/filmedbyram_" style="color:inherit; text-decoration:none;">
@@ -115,10 +125,27 @@
       </a>.
       All rights reserved.
     </p>
-
   </div>
-
 </footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 
 </body>
 </html>
