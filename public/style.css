@@ -1,0 +1,472 @@
+:root{
+  --bg: #0f0f0f;
+  --card: #171717;
+  --text: #f5f5f5;
+  --muted: #b3b3b3;
+  --accent: #d97706;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+/* BOOKING SECTION */
+
+.booking-section{
+    max-width:700px;
+    margin:80px auto 0;
+    text-align:center;
+}
+@media(max-width:425px){
+.burger {
+  display: flex;
+}
+
+.navbar {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+  background: var(--card);
+  border-radius: 5px;
+}
+
+.nav-links.open {
+  display: flex;
+}
+  .hero-text h2{
+    font-size:2.2rem;
+  }
+
+  .hero-image img,
+  .about-image img{
+    height:320px;
+    border-radius:10px;
+  }
+
+  .section-title h3{
+    font-size:2rem;
+  }
+
+  .about-text h3{
+    font-size:2rem;
+  }
+
+  .logo{
+    font-size:1.5rem;
+  }
+
+  .nav-links{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .booking-section h3{
+    font-size:1.5rem;
+  }
+
+  .contact-link{
+    min-width:100%;
+  }
+
+  section{
+    padding:60px 5%;
+  }
+
+  .about-page h2{
+    font-size:2rem;
+  }
+
+}
+.booking-section h3{
+    font-family:'Playfair Display', serif;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.booking-section p{
+    color:var(--muted);
+    margin-bottom:40px;
+}
+
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+.contact-form input,
+.contact-form textarea{
+
+    background:var(--card);
+    border:none;
+    padding:18px;
+    color:white;
+    border-radius:5px;
+    font-size:1rem;
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+    border:1px solid var(--accent);
+
+}
+
+
+.contact-form textarea{
+
+    min-height:150px;
+    resize:none;
+
+}
+
+
+.contact-form button{
+
+    width:100%;
+
+}
+body{
+  font-family:'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+  width:90%;
+  margin:auto;
+  padding:25px 0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--text);
+}
+
+/* HERO */
+
+.hero{
+  width:90%;
+  margin:auto;
+  min-height:90vh;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.tag{
+  color:var(--accent);
+  letter-spacing:3px;
+  font-size:0.8rem;
+  margin-bottom:15px;
+}
+
+.hero-text h2{
+  font-family:'Playfair Display', serif;
+  font-size:4rem;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero-text span{
+  color:var(--accent);
+}
+
+.hero-description{
+  color:var(--muted);
+  max-width:500px;
+  margin-bottom:35px;
+}
+
+.hero-image img{
+  width:100%;
+  height:650px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* BUTTON */
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  opacity:0.85;
+}
+
+/* SECTION */
+
+section{
+  padding:100px 5%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title p{
+  color:var(--accent);
+  letter-spacing:3px;
+  font-size:0.8rem;
+}
+
+.section-title h3{
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.card img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.about-image img{
+  width:100%;
+  height:600px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.about-text h3{
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.about-text p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+/* CONTACT */
+
+.contact-form{
+  max-width:700px;
+  margin:auto;
+
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:var(--card);
+  border:none;
+  padding:16px;
+  color:white;
+  border-radius:5px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+
+
+.contact-form textarea{
+  height:150px;
+  resize:none;
+}
+/* CONTACT LINKS CONTAINER */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px;
+  max-width: 700px; /* Matches your old contact-form width */
+  margin: auto;
+}
+
+/* INDIVIDUAL CONTACT BUTTONS */
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Allows buttons to stretch and fill the space evenly */
+  min-width: 200px; /* Keeps them from getting too squished on mobile */
+  padding: 16px 24px;
+  background: var(--card); /* Matches your old input backgrounds */
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 5px; /* Matches your overall button/input radius */
+  font-weight: 500;
+  transition: 0.3s; /* Matches your existing transition speed */
+}
+
+/* HOVER EFFECT */
+.contact-link:hover {
+  background: var(--accent); /* Highlights with your custom orange on hover */
+  color: white;
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.icon {
+  padding-right: 12px;
+  font-size: 1.3rem;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:15px;
+  border-top:1px solid #222;
+  color:var(--muted);
+  margin-top: 50px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .hero,
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text h2{
+    font-size:3rem;
+  }
+
+  .hero-image img,
+  .about-image img{
+    height:450px;
+  }
+
+  .navbar{
+    flex-direction:column;
+    gap:20px;
+  }
+
+}
+/* ABOUT PAGE */
+
+.about-page{
+  width:90%;
+  margin:auto;
+  min-height:80vh;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+
+  padding:80px 0;
+}
+
+.about-page h2{
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .about-page{
+    grid-template-columns:1fr;
+  }
+
+}
