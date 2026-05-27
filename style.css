@@ -271,6 +271,18 @@ section {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+.reel-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0f0f0f;
+}
+
+.reel-section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #f5f5f5;
+}
+
 .reel-video {
   position: relative;
   width: 100%;
@@ -282,7 +294,8 @@ section {
 .reel-video iframe {
   width: 100%;
   height: 100%;
-  border-radius: 10px; /* optional for modern look */
+  border: none;
+  border-radius: 12px;
 }
 /* ─── BOOKING ────────────────────────────────────────────── */
 
@@ -549,6 +562,10 @@ footer {
 
  @media (max-width: 900px) {
   
+  .reel-section h2 {
+    font-size: 22px;
+  }
+
   .burger {
     display: flex;
   }
@@ -633,7 +650,9 @@ footer {
 ══════════════════════════════════════════════════════════ */
 
 @media (max-width: 425px) {
-
+.reel-section h2 {
+    font-size: 22px;
+  }
   .logo {
     font-size: 1.5rem;
   }
